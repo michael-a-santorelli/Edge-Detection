@@ -14,12 +14,12 @@ from math import sqrt
 def gradientMagnitude(img1, img2):
 
     # Obtain size of image and create shell of output
-    img_size = img1.shape
-    gradientMagnitude = numpy.zeros([img_size[0], img_size[1]], dtype=numpy.double)
+    imgSize = img1.shape
+    gradientMagnitude = numpy.zeros([imgSize[0], imgSize[1]], dtype=numpy.double)
 
     # Calculate gradient magnitude
-    for i in range(img_size[0]):
-        for j in range(img_size[1]):
+    for i in range(imgSize[0]):
+        for j in range(imgSize[1]):
             gradientMagnitude[i, j] = sqrt(img1[i, j]**2 + img2[i, j]**2)
 
     return gradientMagnitude

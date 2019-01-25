@@ -23,13 +23,13 @@ def edgeDetector(image: str):
     # Calculate edge map using gradient magnitude of horizontal and vertical edges
     edgeMap = gradientMagnitude(edgesX, edgesY)
 
-    img_size = edgeMap.shape
+    imgSize = edgeMap.shape
 
     # Rescale values into 8-bit range
     if(numpy.amax(edgeMap) > 255):
         ratio = numpy.amax(edgeMap)/255
-        for i in range(img_size[0]):
-            for j in range(img_size[1]):
+        for i in range(imgSize[0]):
+            for j in range(imgSize[1]):
                 edgeMap[i, j] = edgeMap[i, j]/ratio
 
     # Convert output to uint8 type for displaying purposes
